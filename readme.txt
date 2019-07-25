@@ -1,0 +1,14 @@
+=== Elementor - Donations Addon ===
+Requires at least: 5.2
+Tested up to: 5.2.2
+Requires PHP: 7.1
+
+Elementor plugin for donations via Online Express/iATS Payments.
+
+== Changelog ==
+
+= 1.1 =
+* Auto-updating from GitHub repo
+
+= 1.0 =
+* Initial release
