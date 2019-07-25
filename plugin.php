@@ -46,6 +46,7 @@ class Plugin
 	private function include_widgets_files()
 	{
 		require_once(__DIR__ . '/widgets/online-express.php');
+		require_once(__DIR__ . '/widgets/iats.php');
 	}
 	
 	/**
@@ -61,6 +62,7 @@ class Plugin
 		
 		// Register Widgets
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\Online_Express());
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\iATS());
 	}
 	
 	/**
@@ -75,7 +77,6 @@ class Plugin
 		add_action('elementor/widgets/widgets_registered', [$this, 'register_widgets']);
 	}
 }
-
 
 // Instantiate Plugin Class
 Plugin::instance();

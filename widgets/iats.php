@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
  *
  * @since 1.0.0
  */
-class Online_Express extends Widget_Base
+class iATS extends Widget_Base
 {
 	
 	/**
@@ -30,7 +30,7 @@ class Online_Express extends Widget_Base
 	 */
 	public function get_name()
 	{
-		return 'online-express';
+		return 'iats';
 	}
 	
 	/**
@@ -44,7 +44,7 @@ class Online_Express extends Widget_Base
 	 */
 	public function get_title()
 	{
-		return __('Online Express', 'elementor-donations');
+		return __('iATS', 'elementor-donations');
 	}
 	
 	/**
@@ -138,20 +138,12 @@ class Online_Express extends Widget_Base
 	{
 		$settings = $this->get_settings_for_display();
 		
-		echo '<div class="donation-form online-express">';
+		echo '<div class="donation-form iats">';
 		
 		if ($settings['formId']) {
-			echo '<div id="bbox-root"></div>';
-			echo '<script type="text/javascript">';
-			echo 'window.bboxInit = function () { bbox.showForm("' . $settings['formId'] . '"); };';
-			echo '(function () {';
-			echo 'var e = document.createElement("script"); e.async = true;';
-			echo 'e.src = "https://bbox.blackbaudhosting.com/webforms/bbox-min.js";';
-			echo 'document.getElementsByTagName("head")[0].appendChild(e);';
-			echo '}  ());';
-			echo '</script>';
+			echo '<script type="text/javascript" src="https://www.iatspayments.com/AURA/AURA.aspx?PID=' . $settings['formId'] . '&Country=Canada&HideRecurringEndDate=True"></script>';
 		} else {
-			echo '<h4><em>Online Express - Form ID required.</em></h4>';
+			echo '<h4><em>iATS - Form ID required.</em></h4>';
 		}
 		
 		echo '</div>';
@@ -168,19 +160,8 @@ class Online_Express extends Widget_Base
 	 */
 	protected function _content_template()
 	{
-		?><div class="donation-form online-express">
-			<div id="bbox-root"></div>
-			<script type="text/javascript">
-				window.bboxInit = function () {
-					bbox.showForm("{{{ settings.formId }}}");
-				};
-				(function () {
-					var e = document.createElement("script");
-					e.async = true;
-					e.src = "https://bbox.blackbaudhosting.com/webforms/bbox-min.js";
-					document.getElementsByTagName("head")[0].appendChild(e);
-				}());
-			</script>
+		?><div class="donation-form iats">
+			<script type="text/javascript" src="https://www.iatspayments.com/AURA/AURA.aspx?PID={{{ settings.formId }}}&Country=Canada&HideRecurringEndDate=True"></script>
 		</div><?php
 	}
 }
