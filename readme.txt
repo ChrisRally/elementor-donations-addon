@@ -7,6 +7,9 @@ Elementor plugin for donations via Online Express/iATS Payments.
 
 == Changelog ==
 
+= 1.1.1 =
+* Plugin updates and better widget rendering in preview
+
 = 1.1 =
 * Auto-updating from GitHub repo
 
