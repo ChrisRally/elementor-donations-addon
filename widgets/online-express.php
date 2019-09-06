@@ -199,7 +199,6 @@ class Online_Express extends Widget_Base
 					document.getElementsByTagName("head")[0].appendChild(e);
 				}());
 			</script>
-			<!-- No SmartTRACK script here -->
 		</div><?php
 	}
 }

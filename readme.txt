@@ -7,6 +7,9 @@ Elementor plugin for donations via Online Express/iATS Payments.
 
 == Changelog ==
 
+= 1.3.2 =
+* Included missing vendor folder
+
 = 1.3.1 =
 * Included missing vendor folder
 
