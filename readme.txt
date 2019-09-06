@@ -1,11 +1,14 @@
 === Elementor - Donations Addon ===
 Requires at least: 5.2
-Tested up to: 5.2.2
+Tested up to: 5.2.3
 Requires PHP: 7.1
 
 Elementor plugin for donations via Online Express/iATS Payments.
 
 == Changelog ==
+
+= 1.3.1 =
+* Included missing vendor folder
 
 = 1.3 =
 * Support for SmartTRACK plugin for Online Express
