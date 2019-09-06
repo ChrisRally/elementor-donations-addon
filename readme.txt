@@ -7,6 +7,9 @@ Elementor plugin for donations via Online Express/iATS Payments.
 
 == Changelog ==
 
+= 1.3 =
+* Support for SmartTRACK plugin for Online Express
+
 = 1.2 =
 * Support for iATS Payments
 

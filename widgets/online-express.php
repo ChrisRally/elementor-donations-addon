@@ -122,6 +122,22 @@ class Online_Express extends Widget_Base
 			]
 		);
 		
+		$this->add_control(
+			'smartTrackClient',
+			[
+				'label' => __('SmartTRACK Client', 'elementor-donations'),
+				'type' => Controls_Manager::TEXT,
+			]
+		);
+		
+		$this->add_control(
+			'smartTrackId',
+			[
+				'label' => __('SmartTRACK ID', 'elementor-donations'),
+				'type' => Controls_Manager::TEXT,
+			]
+		);
+		
 		$this->end_controls_section();
 	}
 	
@@ -150,6 +166,8 @@ class Online_Express extends Widget_Base
 			echo 'document.getElementsByTagName("head")[0].appendChild(e);';
 			echo '}  ());';
 			echo '</script>';
+			echo '<script type="text/javascript">var SmartTRACKOLXSettings = {"redirecturl":"","product":"SmartTRACKOLX","client":"' . $settings['smartTrackClient'] . '"}</script>';
+			echo '<script type="text/javascript" src="https://www.smartthing2.com/download/file.php?jsformat=1&olx=1&f=-js.html&c=' . $settings['smartTrackClient'] . '&k=' . $settings['smartTrackId'] . '"></script>';
 		} else {
 			echo '<h4><em>Online Express - Form ID required.</em></h4>';
 		}
@@ -181,6 +199,7 @@ class Online_Express extends Widget_Base
 					document.getElementsByTagName("head")[0].appendChild(e);
 				}());
 			</script>
+			<!-- No SmartTRACK script here -->
 		</div><?php
 	}
 }
