@@ -7,6 +7,9 @@ Elementor plugin for donations via Online Express/iATS Payments.
 
 == Changelog ==
 
+= 1.3.3 =
+* Updated SmartTRACK tracking script
+
 = 1.3.2 =
 * Included missing vendor folder
 

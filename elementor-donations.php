@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Elementor - Donations Addon
  * Description: Elementor plugin for donations via Online Express/iATS Payments.
- * Version:     1.3.2
+ * Version:     1.3.3
  * Author:      Chris Southam
  * Author URI:  https://www.rallyagency.co.uk
  * Text Domain: elementor-donations
