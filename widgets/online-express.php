@@ -121,7 +121,21 @@ class Online_Express extends Widget_Base
 				'type' => Controls_Manager::TEXT,
 			]
 		);
-		
+
+		// SmartTRACK product.
+        $this->add_control(
+            'smartTrack_description',
+            [
+                'raw' => __(
+                    'If you want to enable SmartTrack, please provide your product credentials below.',
+                    'elementor-donations'
+                ),
+                'type' => Controls_Manager::RAW_HTML,
+                'content_classes' => 'elementor-descriptor',
+                'separator' => 'before',
+            ]
+        );
+
 		$this->add_control(
 			'smartTrackClient',
 			[
@@ -137,6 +151,44 @@ class Online_Express extends Widget_Base
 				'type' => Controls_Manager::TEXT,
 			]
 		);
+
+		// SmartZIP Product.
+        $this->add_control(
+            'smartZip_description',
+            [
+                'raw' => __(
+                    'If you want to enable SmartZIP, please provide your product credentials below.',
+                    'elementor-donations'
+                ),
+                'type' => Controls_Manager::RAW_HTML,
+                'content_classes' => 'elementor-descriptor',
+                'separator' => 'before',
+            ]
+        );
+
+        $this->add_control(
+            'smartZipClient',
+            [
+                'label' => __('SmartZIP Client', 'elementor-donations'),
+                'type' => Controls_Manager::TEXT,
+            ]
+        );
+
+        $this->add_control(
+            'smartZipId',
+            [
+                'label' => __('SmartZIP ID', 'elementor-donations'),
+                'type' => Controls_Manager::TEXT,
+            ]
+        );
+
+        $this->add_control(
+            'loqateApiKey',
+            [
+                'label' => __('Loqate API Key', 'elementor-donations'),
+                'type' => Controls_Manager::TEXT,
+            ]
+        );
 		
 		$this->end_controls_section();
 	}
