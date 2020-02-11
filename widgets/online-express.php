@@ -220,6 +220,12 @@ class Online_Express extends Widget_Base
 			echo '</script>';
 			echo '<script type="text/javascript">var SmartTRACKOLXSettings = {"redirecturl":"","NewSKU":true,"product":"SmartTRACKOLX","client":"' . $settings['smartTrackClient'] . '"}</script>';
 			echo '<script type="text/javascript" src="https://www.smartthing2.com/download/file.php?jsformat=1&olx=1&f=-js.html&c=' . $settings['smartTrackClient'] . '&k=' . $settings['smartTrackId'] . '"></script>';
+
+            // Enable SmartZIP if credentials are provided.
+            if ($settings['smartZipClient'] && $settings['smartZipId'] && $settings['loqateApiKey']) {
+                echo '<script type="text/javascript">var SmartZIPOLXSettings = {"pcaKey":"' . $settings['loqateApiKey'] . '","findAddressPrompt":"Find my address","manualPrompt":"Add address manually","product":"SmartZIPOLX","client":"' . $settings['smartZipClient'] . '"}</script>';
+                echo '<script type="text/javascript"src="https://www.smartthing2.com/download/file.php?jsformat=1&olx=1&f=-js.html&c=' . $settings['smartZipClient'] . '&k=' . $settings['smartZipId'] . '"></script>';
+            }
 		} else {
 			echo '<h4><em>Online Express - Form ID required.</em></h4>';
 		}
