@@ -127,7 +127,7 @@ class Online_Express extends Widget_Base
             'smartTrack_description',
             [
                 'raw' => __(
-                    'If you want to enable SmartTrack, please provide your product credentials below.',
+                    'If you want to enable SmartTRACK, please provide your product credentials below.',
                     'elementor-donations'
                 ),
                 'type' => Controls_Manager::RAW_HTML,
