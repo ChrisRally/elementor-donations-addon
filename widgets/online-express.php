@@ -166,8 +166,11 @@ class Online_Express extends Widget_Base
 			echo 'document.getElementsByTagName("head")[0].appendChild(e);';
 			echo '}  ());';
 			echo '</script>';
-			echo '<script type="text/javascript">var SmartTRACKOLXSettings = {"redirecturl":"","NewSKU":true,"product":"SmartTRACKOLX","client":"' . $settings['smartTrackClient'] . '"}</script>';
-			echo '<script type="text/javascript" src="https://www.smartthing2.com/download/file.php?jsformat=1&olx=1&f=-js.html&c=' . $settings['smartTrackClient'] . '&k=' . $settings['smartTrackId'] . '"></script>';
+
+			if ($settings['smartTrackClient'] && $settings['smartTrackId']) {
+                echo '<script type="text/javascript">var SmartTRACKOLXSettings = {"redirecturl":"","NewSKU":true,"product":"SmartTRACKOLX","client":"' . $settings['smartTrackClient'] . '"}</script>';
+                echo '<script type="text/javascript" src="https://www.smartthing2.com/download/file.php?jsformat=1&olx=1&f=-js.html&c=' . $settings['smartTrackClient'] . '&k=' . $settings['smartTrackId'] . '"></script>';
+            }
 		} else {
 			echo '<h4><em>Online Express - Form ID required.</em></h4>';
 		}
