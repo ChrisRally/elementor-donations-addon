@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Elementor - Donations Addon
  * Description: Elementor plugin for donations via Online Express/iATS Payments.
- * Version:     1.4.0
+ * Version:     1.5.0
  * Author:      Chris Southam
  * Author URI:  https://rally.agency
  * Text Domain: elementor-donations
@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) {
 	exit;
 } // Exit if accessed directly
 
-define('ELEMENTOR_DONATIONS', '1.4.0');
+define('ELEMENTOR_DONATIONS', '1.5.0');
 define('ELEMENTOR_DONATIONS_GITHUB_ENDPOINT', 'ChrisRally/elementor-donations-addon');
 
 require __DIR__ . '/includes/puc/plugin-update-checker.php';
