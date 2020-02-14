@@ -121,7 +121,21 @@ class Online_Express extends Widget_Base
 				'type' => Controls_Manager::TEXT,
 			]
 		);
-		
+
+		// SmartTRACK product.
+        $this->add_control(
+            'smartTrack_description',
+            [
+                'raw' => __(
+                    'If you want to enable SmartTRACK, please provide your product credentials below.',
+                    'elementor-donations'
+                ),
+                'type' => Controls_Manager::RAW_HTML,
+                'content_classes' => 'elementor-descriptor',
+                'separator' => 'before',
+            ]
+        );
+
 		$this->add_control(
 			'smartTrackClient',
 			[
@@ -137,6 +151,44 @@ class Online_Express extends Widget_Base
 				'type' => Controls_Manager::TEXT,
 			]
 		);
+
+		// SmartZIP Product.
+        $this->add_control(
+            'smartZip_description',
+            [
+                'raw' => __(
+                    'If you want to enable SmartZIP, please provide your product credentials below.',
+                    'elementor-donations'
+                ),
+                'type' => Controls_Manager::RAW_HTML,
+                'content_classes' => 'elementor-descriptor',
+                'separator' => 'before',
+            ]
+        );
+
+        $this->add_control(
+            'smartZipClient',
+            [
+                'label' => __('SmartZIP Client', 'elementor-donations'),
+                'type' => Controls_Manager::TEXT,
+            ]
+        );
+
+        $this->add_control(
+            'smartZipId',
+            [
+                'label' => __('SmartZIP ID', 'elementor-donations'),
+                'type' => Controls_Manager::TEXT,
+            ]
+        );
+
+        $this->add_control(
+            'loqateApiKey',
+            [
+                'label' => __('Loqate API Key', 'elementor-donations'),
+                'type' => Controls_Manager::TEXT,
+            ]
+        );
 		
 		$this->end_controls_section();
 	}
@@ -166,8 +218,18 @@ class Online_Express extends Widget_Base
 			echo 'document.getElementsByTagName("head")[0].appendChild(e);';
 			echo '}  ());';
 			echo '</script>';
-			echo '<script type="text/javascript">var SmartTRACKOLXSettings = {"redirecturl":"","NewSKU":true,"product":"SmartTRACKOLX","client":"' . $settings['smartTrackClient'] . '"}</script>';
-			echo '<script type="text/javascript" src="https://www.smartthing2.com/download/file.php?jsformat=1&olx=1&f=-js.html&c=' . $settings['smartTrackClient'] . '&k=' . $settings['smartTrackId'] . '"></script>';
+      
+      // Enable SmartTRACK if credentials are provided.
+      if ($settings['smartTrackClient'] && $settings['smartTrackId']) {
+          echo '<script type="text/javascript">var SmartTRACKOLXSettings = {"redirecturl":"","NewSKU":true,"product":"SmartTRACKOLX","client":"' . $settings['smartTrackClient'] . '"}</script>';
+          echo '<script type="text/javascript" src="https://www.smartthing2.com/download/file.php?jsformat=1&olx=1&f=-js.html&c=' . $settings['smartTrackClient'] . '&k=' . $settings['smartTrackId'] . '"></script>';
+      }
+      
+      // Enable SmartZIP if credentials are provided.
+      if ($settings['smartZipClient'] && $settings['smartZipId'] && $settings['loqateApiKey']) {
+          echo '<script type="text/javascript">var SmartZIPOLXSettings = {"pcaKey":"' . $settings['loqateApiKey'] . '","findAddressPrompt":"Find my address","manualPrompt":"Add address manually","product":"SmartZIPOLX","client":"' . $settings['smartZipClient'] . '"}</script>';
+          echo '<script type="text/javascript"src="https://www.smartthing2.com/download/file.php?jsformat=1&olx=1&f=-js.html&c=' . $settings['smartZipClient'] . '&k=' . $settings['smartZipId'] . '"></script>';
+      }
 		} else {
 			echo '<h4><em>Online Express - Form ID required.</em></h4>';
 		}

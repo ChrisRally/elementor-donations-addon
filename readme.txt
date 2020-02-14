@@ -7,6 +7,10 @@ Elementor plugin for donations via Online Express/iATS Payments.
 
 == Changelog ==
 
+= 1.5.0 =
+* Add SmartZIP functionality to a form, provide fields for user to add SmartZIP & Loqate credentials.
+* Conditionally load SmartTRACK and/or SmartZIP if the required credentials are provided.
+
 = 1.4.0 =
 * Removed GitHub authentication
 
